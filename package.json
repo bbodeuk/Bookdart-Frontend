@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint src/**",
+    "lint-diff": "eslint $(git diff --name-only $BASE | grep -E '\\.((j|t)sx?)$' | xargs)"
   },
   "dependencies": {
     "react": "^18.0.0",
