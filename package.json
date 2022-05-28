@@ -8,8 +8,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint src/**",
-    "lint-diff": "eslint $(git diff --name-only $BASE | grep -E '\\.((j|t)sx?)$' | xargs)"
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint-diff": "eslint $(git diff --name-only origin/$BASE origin/$HEAD | grep -E '\\.((j|t)sx?)$' | xargs)"
   },
   "dependencies": {
     "react": "^18.0.0",
