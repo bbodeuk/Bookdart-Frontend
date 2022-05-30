@@ -3,17 +3,17 @@
   --primary-light: #b085f5;
   --primary-dark: #4d2c91;
 
-  --success: #4caf50;
-  --success-light: #80e27e;
-  --success-dark: #087f23;
+  --success: #32d583;
+  --success-light: #72ffb3;
+  --success-dark: #00a255;
 
-  --warning: #ffa726;
-  --warning-light: #ffd95b;
-  --warning-dark: #c77800;
+  --warning: #f79009;
+  --warning-light: #ffc149;
+  --warning-dark: #be6200;
 
-  --error: #d50000;
-  --error-light: #ff5131;
-  --error-dark: #9b0000;
+  --error: #d12316;
+  --error-light: #ff5d41;
+  --error-dark: #980000;
 
   --gray-0: #212121;
   --gray-1: #424242;
