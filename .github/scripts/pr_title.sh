@@ -17,7 +17,7 @@ if [[ ! $MESSAGE =~ $convention ]]; then
     fi
 
     if [[ ! $MESSAGE =~ $type$capital ]]; then
-        echo 'Should start with capital letter'
+        echo 'Must start with a capital letter'
         exit 12
     fi
 
