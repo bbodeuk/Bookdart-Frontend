@@ -41,9 +41,7 @@ const gradientOverflow = css`
     content: '';
     position: absolute;
     right: 0;
-    bottom: 0;
     width: 50%;
-    height: 1.5rem;
     background-image: linear-gradient(
       to right,
       ${palette.backgroundTransparent},
@@ -61,6 +59,11 @@ const Title = styled.h2`
   line-height: 1.5;
   overflow: hidden;
   ${gradientOverflow}
+
+  &::after {
+    top: 1.875rem;
+    height: 1.875rem;
+  }
 `;
 
 const Description = styled.p`
@@ -69,6 +72,11 @@ const Description = styled.p`
   line-height: 1.5;
   overflow: hidden;
   ${gradientOverflow}
+
+  &::after {
+    top: 3rem;
+    height: 1.5rem;
+  }
 `;
 
 // FIXME: Add tags when tag component is implemented
