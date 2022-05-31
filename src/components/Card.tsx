@@ -83,8 +83,7 @@ const Description = styled.p`
 export default function Card({ title, description, link, image }: CardProps) {
   return (
     <Container>
-      {/* FIXME: Use Link component of react-router-dom */}
-      <a href={link}>
+      <a href={link} target="_blank" rel="noopener noreferrer">
         <Figure>
           <Image src={image} />
         </Figure>
