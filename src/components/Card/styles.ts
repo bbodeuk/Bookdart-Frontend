@@ -12,12 +12,14 @@ export const Container = styled.article`
     transform: translate3d(0, -5px, 0);
   }
 `;
+
 export const Figure = styled.figure`
   position: relative;
   height: 0;
   padding-bottom: 20%;
   background-color: #000;
 `;
+
 export const Image = styled.img`
   position: absolute;
   top: 0;
@@ -27,9 +29,11 @@ export const Image = styled.img`
   object-fit: cover;
   opacity: 0.5;
 `;
+
 export const Header = styled.header`
   padding: 10px;
 `;
+
 const gradientOverflow = css`
   &::after {
     content: '';
@@ -44,6 +48,7 @@ const gradientOverflow = css`
     pointer-events: none;
   }
 `;
+
 export const Title = styled.h2`
   position: relative;
   max-height: 3.75rem;
@@ -58,6 +63,7 @@ export const Title = styled.h2`
     height: 1.875rem;
   }
 `;
+
 export const Description = styled.p`
   position: relative;
   max-height: 4.5rem;
