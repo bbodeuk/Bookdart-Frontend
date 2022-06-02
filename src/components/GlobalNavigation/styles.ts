@@ -1,17 +1,28 @@
 import styled from 'styled-components';
 import palette from '../../theme/palette';
 
-const NavBar = styled.nav`
+export const NavBar = styled.div`
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: ${palette.backgroundBase};
+  width: 100%;
   height: 50px;
+  display: flex;
+  direction: row;
+  background-color: ${palette.backgroundBase};
   box-shadow: ${palette.boxShadow1};
 `;
 
-export default NavBar;
+export const Left = styled.div`
+  background-color: red;
+  width: 100%;
+  height: 100%;
+`;
+export const Middle = styled.div`
+  background-color: blue;
+  width: 100%;
+  height: 100%;
+`;
+export const Right = styled.div`
+  background-color: green;
+  width: 100%;
+  height: 100%;
+`;

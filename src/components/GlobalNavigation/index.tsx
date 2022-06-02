@@ -1,5 +1,11 @@
-import NavBar from './styles';
+import { NavBar, Left, Middle, Right } from './styles';
 
 export default function GlobalNavigation() {
-  return <NavBar />;
+  return (
+    <NavBar>
+      <Left />
+      <Middle />
+      <Right />
+    </NavBar>
+  );
 }
