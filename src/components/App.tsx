@@ -1,3 +1,10 @@
+import GlobalNavigation from './GlobalNavigation';
+
 export default function App() {
-  return <div>Hello World!</div>;
+  return (
+    <>
+      <GlobalNavigation />
+      <div>Hello World!</div>
+    </>
+  );
 }
