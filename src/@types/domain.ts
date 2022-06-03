@@ -7,7 +7,7 @@ export interface Bookmark {
   description: string;
   link: string;
   image: string;
-  tags: Tag[];
+  tags: string[];
 }
 
 export interface Group {
