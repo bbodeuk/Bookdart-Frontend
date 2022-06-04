@@ -29,7 +29,10 @@ const tag = [
     return res(
       ctx.status(200),
       ctx.json({
-        tags,
+        ok: true,
+        data: {
+          tags,
+        },
       }),
     );
   }),

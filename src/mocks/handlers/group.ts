@@ -4,11 +4,17 @@ import { Bookmark, Group } from '../../@types/domain';
 
 const group = [
   // Add group
-  rest.post('/api/groups', (_, res, ctx) => res(ctx.status(204))),
+  rest.post('/api/groups', (_, res, ctx) =>
+    res(ctx.status(200), ctx.json({ ok: true })),
+  ),
   // Patch group
-  rest.patch('/api/groups/:groupId', (_, res, ctx) => res(ctx.status(204))),
+  rest.patch('/api/groups/:groupId', (_, res, ctx) =>
+    res(ctx.status(200), ctx.json({ ok: true })),
+  ),
   // Delete group
-  rest.delete('/api/groups/:groupId', (_, res, ctx) => res(ctx.status(204))),
+  rest.delete('/api/groups/:groupId', (_, res, ctx) =>
+    res(ctx.status(200), ctx.json({ ok: true })),
+  ),
   // Get groups
   rest.get('/api/groups', (_, res, ctx) => {
     const groups: Group[] = [
@@ -64,7 +70,7 @@ const group = [
       },
     ];
 
-    return res(ctx.status(200), ctx.json({ groups }));
+    return res(ctx.status(200), ctx.json({ ok: true, data: { groups } }));
   }),
   // Get group by Id
   rest.get('/api/groups/:groupId', (req, res, ctx) => {
@@ -82,10 +88,13 @@ const group = [
     return res(
       ctx.status(200),
       ctx.json({
-        bookmarks,
-        pagination: {
-          page,
-          nextPage: true,
+        ok: true,
+        data: {
+          bookmarks,
+          pagination: {
+            page,
+            nextPage: true,
+          },
         },
       }),
     );
