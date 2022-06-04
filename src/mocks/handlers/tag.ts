@@ -4,7 +4,7 @@ import { Tag } from '../../@types/domain';
 
 const tag = [
   // Get tags
-  rest.get('/api/tags', (_, res, ctx) => {
+  rest.get(`${import.meta.env.VITE_API_SERVER_URI}/tags`, (_, res, ctx) => {
     const tags: Tag[] = [
       { name: 'React', count: 36 },
       { name: 'React Router', count: 23 },

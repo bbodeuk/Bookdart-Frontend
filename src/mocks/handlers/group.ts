@@ -4,19 +4,21 @@ import { Bookmark, Group } from '../../@types/domain';
 
 const group = [
   // Add group
-  rest.post('/api/groups', (_, res, ctx) =>
+  rest.post(`${import.meta.env.VITE_API_SERVER_URI}/groups`, (_, res, ctx) =>
     res(ctx.status(200), ctx.json({ ok: true })),
   ),
   // Patch group
-  rest.patch('/api/groups/:groupId', (_, res, ctx) =>
-    res(ctx.status(200), ctx.json({ ok: true })),
+  rest.patch(
+    `${import.meta.env.VITE_API_SERVER_URI}/groups/:groupId`,
+    (_, res, ctx) => res(ctx.status(200), ctx.json({ ok: true })),
   ),
   // Delete group
-  rest.delete('/api/groups/:groupId', (_, res, ctx) =>
-    res(ctx.status(200), ctx.json({ ok: true })),
+  rest.delete(
+    `${import.meta.env.VITE_API_SERVER_URI}/groups/:groupId`,
+    (_, res, ctx) => res(ctx.status(200), ctx.json({ ok: true })),
   ),
   // Get groups
-  rest.get('/api/groups', (_, res, ctx) => {
+  rest.get(`${import.meta.env.VITE_API_SERVER_URI}/groups`, (_, res, ctx) => {
     const groups: Group[] = [
       {
         groupId: 'ade9dec7-b60b-4561-a067-ee882cb1385d',
@@ -73,32 +75,35 @@ const group = [
     return res(ctx.status(200), ctx.json({ ok: true, data: { groups } }));
   }),
   // Get group by Id
-  rest.get('/api/groups/:groupId', (req, res, ctx) => {
-    const perPage = 20;
-    const page = +(req.url.searchParams.get('page') || '1');
-    const bookmarks: Bookmark[] = [...new Array(perPage)].map((_, i) => ({
-      title: 'My awesome bookmark',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id sollicitudin ligula. Quisque vitae nibh arcu. Aliquam tempor nisl nulla, sed tempus lectus sodales eu.',
-      link: `https://example.com/${perPage * (page - 1) + i}`,
-      image: 'https://picsum.photos/400/300',
-      tags: ['react', 'typescript'],
-    }));
+  rest.get(
+    `${import.meta.env.VITE_API_SERVER_URI}/groups/:groupId`,
+    (req, res, ctx) => {
+      const perPage = 20;
+      const page = +(req.url.searchParams.get('page') || '1');
+      const bookmarks: Bookmark[] = [...new Array(perPage)].map((_, i) => ({
+        title: 'My awesome bookmark',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id sollicitudin ligula. Quisque vitae nibh arcu. Aliquam tempor nisl nulla, sed tempus lectus sodales eu.',
+        link: `https://example.com/${perPage * (page - 1) + i}`,
+        image: 'https://picsum.photos/400/300',
+        tags: ['react', 'typescript'],
+      }));
 
-    return res(
-      ctx.status(200),
-      ctx.json({
-        ok: true,
-        data: {
-          bookmarks,
-          pagination: {
-            page,
-            nextPage: true,
+      return res(
+        ctx.status(200),
+        ctx.json({
+          ok: true,
+          data: {
+            bookmarks,
+            pagination: {
+              page,
+              nextPage: true,
+            },
           },
-        },
-      }),
-    );
-  }),
+        }),
+      );
+    },
+  ),
 ];
 
 export default group;

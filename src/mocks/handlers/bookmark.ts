@@ -3,7 +3,7 @@ import { rest } from 'msw';
 
 const bookmark = [
   // Create bookmark
-  rest.post('/api/bookmarks', (_, res, ctx) =>
+  rest.post(`${import.meta.env.VITE_API_SERVER_URI}/bookmarks`, (_, res, ctx) =>
     res(
       ctx.status(200),
       ctx.json({
@@ -20,8 +20,9 @@ const bookmark = [
     ),
   ),
   // Delete bookmark
-  rest.delete('/api/bookmarks/:bookmarkId', (_, res, ctx) =>
-    res(ctx.status(200), ctx.json({ ok: true })),
+  rest.delete(
+    `${import.meta.env.VITE_API_SERVER_URI}/bookmarks/:bookmarkId`,
+    (_, res, ctx) => res(ctx.status(200), ctx.json({ ok: true })),
   ),
 ];
 
