@@ -1,8 +1,17 @@
-// FIXME: Fix the type below when defined
+export interface Tag {
+  name: string;
+  count: number;
+}
 export interface Bookmark {
   title: string;
   description: string;
   link: string;
   image: string;
-  tags: { id: number; name: string }[];
+  tags: string[];
+}
+
+export interface Group {
+  groupId: string;
+  name: string;
+  public: boolean;
 }

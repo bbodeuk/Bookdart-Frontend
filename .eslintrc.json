@@ -15,7 +15,7 @@
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint", "eslint-plugin-prettier"],
-  "ignorePatterns": ["dist", "node_modules", "*.test.*"],
+  "ignorePatterns": ["dist", "node_modules", "*.test.*", "public"],
   "settings": {
     "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
     "import/resolver": {
