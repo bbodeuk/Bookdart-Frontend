@@ -16,6 +16,10 @@ jobs:
         with:
           node-version: '16'
           check-latest: true
+
+      - name: Test
+        run: npm run test
+
       - name: Run lint
         run: |
           npm ci
