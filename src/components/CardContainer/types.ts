@@ -1,5 +1,5 @@
-import { CardProps } from '../Card/types';
+import { Bookmark } from '../../@types/domain';
 
 export interface CardContainerProps {
-  items: CardProps[];
+  items: Bookmark[];
 }
