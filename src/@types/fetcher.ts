@@ -21,12 +21,9 @@ export type SendRequest = (
 ) => Promise<unknown | InstanceError>;
 
 export interface Instance {
-  get(resource: string, init?: RequestInit): Promise<unknown | InstanceError>;
-  post(resource: string, init?: RequestInit): Promise<unknown | InstanceError>;
-  delete(
-    resource: string,
-    init?: RequestInit,
-  ): Promise<unknown | InstanceError>;
-  put(resource: string, init?: RequestInit): Promise<unknown | InstanceError>;
-  patch(resource: string, init?: RequestInit): Promise<unknown | InstanceError>;
+  get(resource: string, init?: RequestInit): Promise<any | InstanceError>;
+  post(resource: string, init?: RequestInit): Promise<any | InstanceError>;
+  delete(resource: string, init?: RequestInit): Promise<any | InstanceError>;
+  put(resource: string, init?: RequestInit): Promise<any | InstanceError>;
+  patch(resource: string, init?: RequestInit): Promise<any | InstanceError>;
 }
