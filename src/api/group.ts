@@ -5,13 +5,14 @@ import {
   GetBookmarksFromGroupResponse,
   GetGroupsResponse,
 } from '../@types/api';
+import { Visibility } from '../@types/domain';
 
 export function createGroup({
   name,
   visibility,
 }: {
   name: string;
-  visibility: string;
+  visibility: Visibility;
 }): ApiResponse {
   return instance.post('/groups', {
     body: JSON.stringify({ name, visibility }),
@@ -25,7 +26,7 @@ export function updateGroup({
 }: {
   groupId: string;
   name?: string;
-  visibility?: string;
+  visibility?: Visibility;
 }): ApiResponse {
   return instance.patch(`/groups/${groupId}`, {
     body: JSON.stringify({ name, visibility }),

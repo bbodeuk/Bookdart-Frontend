@@ -10,8 +10,10 @@ export interface Bookmark {
   tags: string[];
 }
 
+export type Visibility = 'private' | 'public';
+
 export interface Group {
   groupId: string;
   name: string;
-  public: boolean;
+  visibility: Visibility;
 }
