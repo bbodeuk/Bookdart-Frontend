@@ -17,7 +17,7 @@ export default function fetcher({
       setTimeout(() => {
         resolve({
           ok: false,
-          message: 'Took too long to fetch',
+          message: '로딩 시간 초과',
         });
       }, timeOut);
     });
