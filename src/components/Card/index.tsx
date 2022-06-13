@@ -1,8 +1,7 @@
-import { CardProps } from './types';
+import { Bookmark } from '../../@types/domain';
 import { Container, Figure, Image, Header, Title, Description } from './styles';
 
-// FIXME: Add tags when tag component is implemented
-export default function Card({ title, description, link, image }: CardProps) {
+export default function Card({ title, description, link, image }: Bookmark) {
   return (
     <Container>
       <a href={link} target="_blank" rel="noopener noreferrer">
