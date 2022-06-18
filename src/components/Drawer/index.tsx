@@ -5,7 +5,7 @@ import Portal from './Potal';
 
 export default function Drawer({
   type = 'left',
-  open = true,
+  open,
   onClose,
   children,
 }: DrawerProps) {
@@ -13,17 +13,21 @@ export default function Drawer({
 
   useEffect(() => {
     if (open) {
+      document.body.style.overflow = 'hidden';
       setTimeout(() => {
         setToggle((prev) => !prev);
       }, 250);
+      return;
     }
+
+    document.body.removeAttribute('style');
   }, [open]);
 
   useEffect(() => {
     if (!toggle) {
       setTimeout(() => {
         onClose();
-      }, 250);
+      }, 450);
     }
   }, [toggle]);
 
