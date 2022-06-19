@@ -40,7 +40,17 @@ const VARIANTS: ObjType = {
   `,
 };
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.button.attrs(
+  ({
+    size,
+    variant,
+    disabled,
+  }: {
+    size: string;
+    variant: string;
+    disabled: boolean;
+  }) => ({ size, variant, disabled }),
+)`
   display: inline-flex;
   outline: none;
   border: none;
