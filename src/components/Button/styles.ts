@@ -60,6 +60,8 @@ export const StyledButton = styled.button.attrs(
     disabled: boolean;
   }) => ({ size, variant, disabled }),
 )`
+  display: inline-flex;
+  outline: none;
   border: none;
   border-radius: ${palette.borderRadius};
   font-weight: bold;
