@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import palette from '../../theme/palette';
+import palette from '~/theme/palette';
 
 export const Container = styled.article`
   background-color: ${palette.backgroundBase};

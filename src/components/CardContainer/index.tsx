@@ -1,6 +1,6 @@
-import Card from '../Card';
-import { CardContainerProps } from './types';
+import Card from '~/components/Card';
 import Container from './styles';
+import { CardContainerProps } from './types';
 
 export default function CardContainer({ items }: CardContainerProps) {
   return (

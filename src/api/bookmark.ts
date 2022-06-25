@@ -1,5 +1,5 @@
 import instance from './instance';
-import { ApiResponse, CreateBookmarkResponse } from '../@types/api';
+import { ApiResponse, CreateBookmarkResponse } from '~/@types/api';
 
 export function createBookmark({
   groupId,

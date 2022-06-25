@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { SelectProps } from './types';
 import { Display, Icon, Option, OptionDropdown, StyledSelect } from './styles';
+import { SelectProps } from './types';
 
 export default function Select({ options, disabled, onChange }: SelectProps) {
   const [current, setCurrent] = useState(

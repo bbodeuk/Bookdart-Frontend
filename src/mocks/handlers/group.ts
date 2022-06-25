@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { rest } from 'msw';
-import { Bookmark, Group } from '../../@types/domain';
+import { Bookmark, Group } from '~/@types/domain';
 
 const group = [
   // Add group

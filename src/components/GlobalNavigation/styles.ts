@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import palette from '../../theme/palette';
+import palette from '~/theme/palette';
 
 export const NavBar = styled.div`
   position: fixed;

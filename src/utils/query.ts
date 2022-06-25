@@ -1,4 +1,4 @@
-import { ParsedQuery, QueryObject } from '../@types/query';
+import { ParsedQuery, QueryObject } from '~/@types/query';
 
 export function parseQuery(query: string): ParsedQuery {
   return Object.fromEntries(
