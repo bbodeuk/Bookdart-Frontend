@@ -1,4 +1,4 @@
-import { Bookmark } from '../../@types/domain';
+import { Bookmark } from '~/@types/domain';
 
 export interface CardContainerProps {
   items: Bookmark[];

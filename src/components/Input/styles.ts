@@ -1,6 +1,6 @@
 import styled from 'styled-components';
+import palette from '~/theme/palette';
 import { Colors } from './types';
-import palette from '../../theme/palette';
 
 export const InputWrapper = styled.div`
   position: relative;

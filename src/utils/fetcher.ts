@@ -5,7 +5,7 @@ import {
   Instance,
   InstanceOptions,
   SendRequest,
-} from '../@types/fetcher';
+} from '~/@types/fetcher';
 
 export default function fetcher({
   baseUrl = '',

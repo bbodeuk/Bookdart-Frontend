@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { rest } from 'msw';
-import { Tag } from '../../@types/domain';
+import { Tag } from '~/@types/domain';
 
 const tag = [
   // Get tags

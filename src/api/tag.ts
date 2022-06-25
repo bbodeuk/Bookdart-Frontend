@@ -1,6 +1,6 @@
+import { composeQuery } from '~/utils/query';
 import instance from './instance';
-import { composeQuery } from '../utils/query';
-import { ApiResponse, GetTagsResponse } from '../@types/api';
+import { ApiResponse, GetTagsResponse } from '~/@types/api';
 
 // eslint-disable-next-line import/prefer-default-export
 export function getTags({

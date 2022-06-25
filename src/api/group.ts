@@ -1,11 +1,11 @@
+import { composeQuery } from '~/utils/query';
 import instance from './instance';
-import { composeQuery } from '../utils/query';
 import {
   ApiResponse,
   GetBookmarksFromGroupResponse,
   GetGroupsResponse,
-} from '../@types/api';
-import { Visibility } from '../@types/domain';
+} from '~/@types/api';
+import { Visibility } from '~/@types/domain';
 
 export function createGroup({
   name,

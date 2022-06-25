@@ -1,5 +1,5 @@
-import { Bookmark } from '../../@types/domain';
 import { Container, Figure, Image, Header, Title, Description } from './styles';
+import { Bookmark } from '~/@types/domain';
 
 export default function Card({ title, description, link, image }: Bookmark) {
   return (

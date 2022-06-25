@@ -1,5 +1,5 @@
-import { InputProps } from './types';
 import { ErrorText, InputWrapper, StyledInput, StyledLabel } from './styles';
+import { InputProps } from './types';
 
 export default function Input({
   type = 'text',
