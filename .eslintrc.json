@@ -35,8 +35,8 @@
         "groups": [
           "builtin",
           "external",
-          "sibling",
           "internal",
+          "sibling",
           "parent",
           "index",
           "type"
@@ -44,6 +44,10 @@
         "pathGroups": [
           {
             "pattern": "~/@types/**",
+            "group": "type"
+          },
+          {
+            "pattern": "./types",
             "group": "type"
           },
           {
