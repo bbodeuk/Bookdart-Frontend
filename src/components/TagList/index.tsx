@@ -4,7 +4,7 @@ import { pickHashedRandom } from '~/utils/array';
 import { StyledTag, StyledTagList } from './styles';
 import { TagListProps } from './types';
 
-export default function TagList({ list }: TagListProps) {
+export default function TagList({ list, children }: TagListProps) {
   const tagsWithColor = useMemo(
     () => list.map((x) => [x, pickHashedRandom(pastelPalette, x)]),
     [list],
@@ -15,6 +15,7 @@ export default function TagList({ list }: TagListProps) {
       {tagsWithColor.map(([tag, color]) => (
         <StyledTag color={color}>{tag}</StyledTag>
       ))}
+      {children}
     </StyledTagList>
   );
 }
