@@ -8,7 +8,7 @@ const pastelPalette = [
   '#fed7c3',
   '#ff896f',
   '#a9a0fc',
-  '#8av481',
+  '#baffc9',
   '#cfc3b5',
 ];
 
