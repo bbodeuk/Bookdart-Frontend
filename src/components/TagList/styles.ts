@@ -11,6 +11,7 @@ export const StyledTag = styled('li').attrs(({ color }: { color: string }) => ({
   color,
 }))`
   padding: 0.3rem 0.5rem;
+  line-height: 1.5;
   background-color: ${({ color }) => color};
   border-radius: ${palette};
 `;
