@@ -6,13 +6,14 @@ import {
   DialogBackdrop,
   DialogButton,
   DialogButtons,
+  DialogDescription,
   DialogTitle,
   StyledDialog,
 } from './styles';
 
 export default function Dialog() {
   const dialogRoot = document.getElementById('dialog') as HTMLElement;
-  const { revealed, text, type } = useDialogStore();
+  const { revealed, title, description, type } = useDialogStore();
   const { onConfirm, onCancel } = useDialog();
 
   const DialogComponent = useCallback(
@@ -20,7 +21,8 @@ export default function Dialog() {
       <>
         <DialogBackdrop type="button" onClick={onCancel} />
         <StyledDialog>
-          <DialogTitle>{text}</DialogTitle>
+          <DialogTitle>{title}</DialogTitle>
+          <DialogDescription>{description}</DialogDescription>
           <DialogButtons>
             <DialogButton
               type="button"
@@ -42,7 +44,7 @@ export default function Dialog() {
         </StyledDialog>
       </>
     ),
-    [text, type, onConfirm, onCancel],
+    [title, description, type, onConfirm, onCancel],
   );
 
   useEffect(() => {

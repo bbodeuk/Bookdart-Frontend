@@ -1,24 +1,31 @@
 import useDialogStore from '~/store/useDialogStore';
 
 export default function useDialog() {
-  const { setText, setRevealed, setType, responseHandler, setResponseHandler } =
-    useDialogStore();
+  const {
+    setTitle,
+    setDescription,
+    setRevealed,
+    setType,
+    responseHandler,
+    setResponseHandler,
+  } = useDialogStore();
 
   const onConfirm = () => {
     setRevealed(false);
     responseHandler?.(true);
-    setText('');
+    setTitle('');
   };
 
   const onCancel = () => {
     setRevealed(false);
     responseHandler?.(false);
-    setText('');
+    setTitle('');
   };
 
-  const confirm = (text: string) => {
+  const confirm = (title: string, description = '') => {
     setRevealed(true);
-    setText(text);
+    setTitle(title);
+    setDescription(description);
     setType('confirm');
 
     return new Promise<boolean>((res) => {
@@ -26,9 +33,10 @@ export default function useDialog() {
     });
   };
 
-  const alert = (text: string) => {
+  const alert = (title: string, description = '') => {
     setRevealed(true);
-    setText(text);
+    setTitle(title);
+    setDescription(description);
     setType('alert');
 
     return new Promise<boolean>((res) => {

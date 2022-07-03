@@ -25,11 +25,19 @@ export const StyledDialog = styled.section`
 `;
 
 export const DialogTitle = styled.h2`
-  margin-bottom: 1rem;
+  margin-bottom: 0.3rem;
+  font-size: 1.3rem;
+  line-height: 2;
+`;
+
+export const DialogDescription = styled.p`
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
 `;
 
 export const DialogButtons = styled.div`
   display: flex;
+  margin-top: 0.5rem;
   justify-content: flex-end;
   gap: 10px;
 `;
