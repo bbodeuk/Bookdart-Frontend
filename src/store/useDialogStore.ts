@@ -4,21 +4,21 @@ import { DialogStore } from '~/@types/useDialogStore';
 export default create<DialogStore>((set) => ({
   title: '',
   setTitle: (title) => {
-    set((prev) => ({ ...prev, title }));
+    set((state) => ({ ...state, title }));
   },
   description: '',
   setDescription: (description) => {
-    set((prev) => ({ ...prev, description }));
+    set((state) => ({ ...state, description }));
   },
   type: 'alert',
   setType: (type) => {
-    set((prev) => ({ ...prev, type }));
+    set((state) => ({ ...state, type }));
   },
   revealed: false,
   setRevealed(revealed) {
-    set((prev) => ({ ...prev, revealed }));
+    set((state) => ({ ...state, revealed }));
   },
   setResponseHandler(responseHandler) {
-    set((prev) => ({ ...prev, responseHandler }));
+    set((state) => ({ ...state, responseHandler }));
   },
 }));
