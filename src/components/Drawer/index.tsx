@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
+import Portal from '../Portal';
 import { BackDrop, Content, Wrapper } from './styles';
 import { DrawerProps } from './types';
-import Portal from '../Portal';
 
 export default function Drawer({
   type = 'left',
