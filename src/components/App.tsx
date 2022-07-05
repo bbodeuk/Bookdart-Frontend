@@ -7,7 +7,7 @@ export default function App() {
   return (
     <>
       <button type="button" onClick={() => setOpen(true)}>
-        gggg
+        Open drawer
       </button>
       <Drawer open={open} onClose={() => setOpen(false)} />
     </>
