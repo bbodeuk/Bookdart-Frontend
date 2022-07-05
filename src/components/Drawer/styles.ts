@@ -24,18 +24,16 @@ export const Content = styled.div.attrs(
 
   transform: translateX(
     ${({ toggle, type }) => {
-      if (type === 'left') {
-        if (toggle) {
-          return `0px`;
-        }
-        return `-${WIDTH}px`;
-      }
       if (type === 'right') {
         if (toggle) {
           return `calc(100vw - ${WIDTH}px)`;
         }
         return `100vw`;
       }
+      if (toggle) {
+        return `0px`;
+      }
+      return `-${WIDTH}px`;
     }}
   );
   transition: transform 0.5s;
