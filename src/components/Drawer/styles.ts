@@ -1,19 +1,20 @@
 import styled from 'styled-components';
 import palette from '../../theme/palette';
+import { DrawerPosition } from './types';
+
+const WIDTH = 360;
 
 export const Wrapper = styled.div`
   position: absolute;
   inset: 0;
 `;
 
-export const Content = styled.div.attrs(
-  ({ toggle, type }: { toggle: boolean; type: 'left' | 'right' }) => ({
-    toggle,
-    type,
-  }),
-)`
+export const Content = styled.div.attrs(({ toggle, type }: DrawerPosition) => ({
+  toggle,
+  type,
+}))`
   position: fixed;
-  width: 360px;
+  width: ${WIDTH}px;
   height: 100vh;
   background-color: ${palette.backgroundBase};
 
@@ -24,7 +25,7 @@ export const Content = styled.div.attrs(
         return 0;
       }
 
-      return '-360px';
+      return `-${WIDTH}px`;
     }
     return 'unset';
   }};
@@ -34,7 +35,7 @@ export const Content = styled.div.attrs(
         return 0;
       }
 
-      return '-360px';
+      return `-${WIDTH}px`;
     }
     return 'unset';
   }};
@@ -42,7 +43,7 @@ export const Content = styled.div.attrs(
 `;
 
 export const BackDrop = styled.div.attrs(
-  ({ toggle, type }: { toggle: boolean; type: 'left' | 'right' }) => ({
+  ({ toggle, type }: DrawerPosition) => ({
     toggle,
     type,
   }),

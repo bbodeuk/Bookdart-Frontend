@@ -14,22 +14,18 @@ export default function Drawer({
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden';
-      setTimeout(() => {
-        setToggle((prev) => !prev);
-      }, 250);
+      setToggle((prev) => !prev);
       return;
     }
 
     document.body.removeAttribute('style');
   }, [open]);
 
-  useEffect(() => {
+  const handleTransitionEnd = () => {
     if (!toggle) {
-      setTimeout(() => {
-        onClose();
-      }, 450);
+      onClose();
     }
-  }, [toggle]);
+  };
 
   return open ? (
     <Portal>
@@ -41,6 +37,7 @@ export default function Drawer({
           type={type}
           toggle={toggle}
           onClick={() => setToggle((prev) => !prev)}
+          onTransitionEnd={handleTransitionEnd}
         />
       </Wrapper>
     </Portal>

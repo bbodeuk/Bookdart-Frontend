@@ -6,3 +6,8 @@ export interface DrawerProps {
   open: boolean;
   onClose: () => void;
 }
+
+export interface DrawerPosition {
+  toggle: boolean;
+  type: 'left' | 'right';
+}
