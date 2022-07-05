@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import Portal from '../Portal';
 import { BackDrop, Content, Wrapper } from './styles';
+import Portal from '../Portal';
 import { DrawerProps } from './types';
 
 export default function Drawer({
@@ -18,7 +18,7 @@ export default function Drawer({
       return;
     }
 
-    document.body.removeAttribute('style');
+    document.body.style.overflow = 'auto';
   }, [open]);
 
   const handleTransitionEnd = () => {

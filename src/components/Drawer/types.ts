@@ -1,13 +1,10 @@
 import { ReactNode } from 'react';
 
 export interface DrawerProps {
-  type?: 'left' | 'right';
+  type?: DrawerPosition;
   children?: ReactNode;
   open: boolean;
   onClose: () => void;
 }
 
-export interface DrawerPosition {
-  toggle: boolean;
-  type: 'left' | 'right';
-}
+export type DrawerPosition = 'left' | 'right';
