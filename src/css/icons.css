@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'bookdart';
+  src: url('/icons/bookdart.eot?dn95c9');
+  src: url('/icons/bookdart.eot?dn95c9#iefix') format('embedded-opentype'),
+    url('/icons/bookdart.ttf?dn95c9') format('truetype'),
+    url('/icons/bookdart.woff?dn95c9') format('woff'),
+    url('/icons/bookdart.svg?dn95c9#bookdart') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  font-family: 'bookdart' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-add:before {
+  content: '\e900';
+}
+.icon-close:before {
+  content: '\e901';
+}
+.icon-search:before {
+  content: '\e902';
+}
+.icon-filter_list_off:before {
+  content: '\e903';
+}
+.icon-filter_list:before {
+  content: '\e904';
+}
+.icon-sort:before {
+  content: '\e905';
+}
+.icon-filter_alt:before {
+  content: '\e906';
+}
+.icon-settings:before {
+  content: '\e907';
+}
