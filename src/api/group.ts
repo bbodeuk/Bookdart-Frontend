@@ -1,4 +1,5 @@
 import { composeQuery } from '~/utils/query';
+// eslint-disable-next-line import/no-cycle
 import instance from './instance';
 import {
   ApiResponse,
@@ -14,7 +15,7 @@ export function createGroup({
   name: string;
   visibility: Visibility;
 }): ApiResponse {
-  return instance.post('/groups', {
+  return instance().post('/groups', {
     body: JSON.stringify({ name, visibility }),
   });
 }
@@ -28,17 +29,17 @@ export function updateGroup({
   name?: string;
   visibility?: Visibility;
 }): ApiResponse {
-  return instance.patch(`/groups/${groupId}`, {
+  return instance().patch(`/groups/${groupId}`, {
     body: JSON.stringify({ name, visibility }),
   });
 }
 
 export function deleteGroup(groupId: string): ApiResponse {
-  return instance.delete(`/groups/${groupId}`);
+  return instance().delete(`/groups/${groupId}`);
 }
 
 export function getGroups(): ApiResponse<GetGroupsResponse> {
-  return instance.get('/groups');
+  return instance().get('/groups');
 }
 
 export function getBookmarksFromGroup({
@@ -56,5 +57,5 @@ export function getBookmarksFromGroup({
 }): ApiResponse<GetBookmarksFromGroupResponse> {
   const query = composeQuery({ order, tag, search, page });
 
-  return instance.get(`/groups/${groupId}${query}`);
+  return instance().get(`/groups/${groupId}${query}`);
 }

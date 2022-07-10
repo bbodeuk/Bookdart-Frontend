@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-cycle
 import instance from './instance';
 import { ApiResponse, CreateBookmarkResponse } from '~/@types/api';
 
@@ -10,11 +11,11 @@ export function createBookmark({
   link: string;
   tags: string[];
 }): ApiResponse<CreateBookmarkResponse> {
-  return instance.post('/bookmarks', {
+  return instance().post('/bookmarks', {
     body: JSON.stringify({ groupId, link, tags }),
   });
 }
 
 export function deleteBookmark(bookmarkId: string): ApiResponse {
-  return instance.delete(`/bookmarks/${bookmarkId}`);
+  return instance().delete(`/bookmarks/${bookmarkId}`);
 }

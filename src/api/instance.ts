@@ -1,11 +1,15 @@
+// eslint-disable-next-line import/no-cycle
+import useAuthStore from '~/store/useAuthStore';
 import fetcher from '~/utils/fetcher';
 
-// FIXME: Add authorization header
-const instance = fetcher({
-  baseUrl: import.meta.env.VITE_API_SERVER_URI,
-  commonHeader: {
-    'Content-Type': 'application/json',
-  },
-});
+export default function createInstance() {
+  const { token } = useAuthStore.getState();
 
-export default instance;
+  return fetcher({
+    baseUrl: import.meta.env.VITE_API_SERVER_URI,
+    commonHeader: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+  });
+}
