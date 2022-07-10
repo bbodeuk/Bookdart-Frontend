@@ -46,10 +46,3 @@ export const InputBox = styled.div`
   border-radius: 8px;
   gap: 9px;
 `;
-
-export const SignUp = styled.div`
-  font-size: 17px;
-  text-align: center;
-  font-weight: 600;
-  color: ${palette.gray2};
-`;
