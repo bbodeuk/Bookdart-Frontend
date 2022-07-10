@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import pastelPalette from '~/theme/pastelPalette';
 import { pickHashedRandom } from '~/utils/array';
+import Icon from '~/components/Icon';
 import { StyledTag, StyledTagList, TagRemoveButton } from './styles';
 import { TagListProps } from './types';
 
@@ -27,15 +28,7 @@ export default function TagList({
                 setTags?.((prev) => [...prev.filter((x) => x !== tag)]);
               }}
             >
-              {/* FIXME: Use icon font instead */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 48 48"
-                height="48"
-                width="48"
-              >
-                <path d="m12.45 37.65-2.1-2.1L21.9 24 10.35 12.45l2.1-2.1L24 21.9l11.55-11.55 2.1 2.1L26.1 24l11.55 11.55-2.1 2.1L24 26.1Z" />
-              </svg>
+              <Icon name="close" alt="태그 제거" />
             </TagRemoveButton>
           )}
         </StyledTag>
