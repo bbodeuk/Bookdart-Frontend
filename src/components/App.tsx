@@ -1,22 +1,21 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import useDrawer from '~/hooks/useDrawer';
+
 import useDrawerStore from '~/store/useDrawerStore';
 import Drawer from './Drawer';
 
 export default function App() {
-  const { open } = useDrawerStore();
-  const { onOpen, onClose } = useDrawer();
+  const { open, setOpen } = useDrawerStore();
 
   return (
     <BrowserRouter>
-      <button type="button" onClick={onOpen}>
+      <button type="button" onClick={() => setOpen(true)}>
         Open drawer
       </button>
       <Routes>
         {/* FIXME: Update router with pages */}
         <Route path="/" element={<p>Hello world!</p>} />
       </Routes>
-      <Drawer open={open} onClose={onClose} />
+      <Drawer open={open} onClose={() => setOpen(false)} />
     </BrowserRouter>
   );
 }
