@@ -1,9 +1,10 @@
-import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import useDrawerStore from '~/store/useDrawerStore';
 import Drawer from './Drawer';
 
 export default function App() {
-  const [open, setOpen] = useState(false);
+  const { open, setOpen } = useDrawerStore();
 
   return (
     <BrowserRouter>
