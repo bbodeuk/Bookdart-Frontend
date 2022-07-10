@@ -1,4 +1,3 @@
-import Input from '../Input';
 import {
   Root,
   Container,
@@ -8,20 +7,20 @@ import {
   SignUp,
   Typography,
 } from './styles';
+import Input from '../Input';
 
 export default function Login() {
   return (
     <Root>
       <Container>
         <Form>
-          <Logo />
+          <Logo>BookDart</Logo>
           <InputBox>
             <Typography>로그인</Typography>
             <Input label="이메일" />
             <Input type="password" label="비밀번호" />
-            <button type="submit">로그인</button>
           </InputBox>
-          <SignUp />
+          <SignUp>회원가입</SignUp>
         </Form>
       </Container>
     </Root>
