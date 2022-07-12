@@ -1,0 +1,7 @@
+:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+html {
+  font-family: 'Noto Sans KR', sans-serif;
+}

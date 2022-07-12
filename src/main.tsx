@@ -4,6 +4,8 @@ import App from './components/App';
 import Dialog from './components/Dialog';
 
 import './css/reset.css';
+import './css/icons.css';
+import './css/style.css';
 
 async function main() {
   if (import.meta.env.DEV) {
