@@ -22,13 +22,17 @@ export const Form = styled.div`
   display: flex;
   flex-direction: column;
   gap: 22px;
+  align-items: center;
 `;
 
 export const Logo = styled.div`
   font-size: 44px;
   text-align: center;
   font-weight: 700;
-  color: ${palette.primaryLight};
+  width: 100px;
+  height: 100px;
+  background: url('/src/assets/logo.png');
+  background-size: cover;
 `;
 
 export const Typography = styled.div`
@@ -39,6 +43,7 @@ export const Typography = styled.div`
 `;
 
 export const InputBox = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   border: 1px solid ${palette.gray5};

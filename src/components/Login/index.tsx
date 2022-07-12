@@ -6,11 +6,11 @@ export default function Login() {
     <Root>
       <Container>
         <Form>
-          <Logo>BookDart</Logo>
+          <Logo />
           <InputBox>
-            <Typography>로그인</Typography>
-            <Input label="이메일" />
-            <Input type="password" label="비밀번호" />
+            <Typography>Login</Typography>
+            <Input label="Email" />
+            <Input type="password" label="Password" />
           </InputBox>
         </Form>
       </Container>
