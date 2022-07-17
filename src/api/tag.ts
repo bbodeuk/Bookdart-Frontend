@@ -1,5 +1,4 @@
 import { composeQuery } from '~/utils/query';
-// eslint-disable-next-line import/no-cycle
 import instance from './instance';
 import { ApiResponse, GetTagsResponse } from '~/@types/api';
 
@@ -16,5 +15,5 @@ export function getTags({
     limit,
   });
 
-  return instance().get(`/tags${query}`);
+  return instance.get(`/tags${query}`);
 }
