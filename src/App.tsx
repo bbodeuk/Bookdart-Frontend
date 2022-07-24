@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { useDrawerStore } from '~/store';
-import Drawer from './Drawer';
+import Drawer from './components/Drawer';
 
 export default function App() {
   const { open, setOpen } = useDrawerStore();
