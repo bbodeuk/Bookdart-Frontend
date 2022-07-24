@@ -1,10 +1,9 @@
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, ReactElement, SetStateAction } from 'react';
 
 export type DrawerSize = 'large' | 'medium' | 'small';
 
 export interface ModalProps {
-  // eslint-disable-next-line no-undef
-  children: JSX.Element | JSX.Element[];
+  children: ReactElement | ReactElement[];
   revealed: boolean;
   size?: DrawerSize;
   dimmed?: boolean;

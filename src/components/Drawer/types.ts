@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
+import { ReactElement } from 'react';
 
 export type DrawerPosition = 'left' | 'right';
 export interface DrawerProps {
   type?: DrawerPosition;
-  children?: ReactNode;
+  children?: ReactElement | ReactElement[];
   open: boolean;
   onClose: () => void;
 }
