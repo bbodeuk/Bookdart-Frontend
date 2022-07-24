@@ -1,4 +1,3 @@
 export interface AuthStore {
-  initialize: () => void;
-  refresh: () => Promise<void>;
+  initialize: () => Promise<void>;
 }
