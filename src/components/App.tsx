@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import useDrawerStore from '~/store/useDrawerStore';
+import { useDrawerStore } from '~/store';
 import Drawer from './Drawer';
 
 export default function App() {
