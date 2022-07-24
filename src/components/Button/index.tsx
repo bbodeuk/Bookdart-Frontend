@@ -8,7 +8,7 @@ function Button({ size, variant, disabled, onAction, children }: ButtonProps) {
     if (disabled) {
       return;
     }
-    onAction();
+    onAction?.(e);
   };
 
   return (
@@ -24,9 +24,9 @@ function Button({ size, variant, disabled, onAction, children }: ButtonProps) {
 }
 
 Button.defaultProps = {
-  size: 'medium',
+  size: 'small',
   disabled: false,
-  variant: 'default',
+  variant: 'text',
 };
 
 export default Button;

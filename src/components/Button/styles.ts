@@ -1,41 +1,50 @@
 import styled, { css } from 'styled-components';
-import { ObjType } from './types';
 import palette from '../../theme/palette';
+import { ObjType } from './types';
 
 const SIZES: ObjType = {
   small: css`
-    font-size: 10px;
-    width: 100px;
-    height: 100px;
+    font-size: 18px;
+    min-width: 100px;
   `,
   medium: css`
-    font-size: 15px;
-    width: 250px;
-    height: 250px;
+    font-size: 20px;
+    min-width: 200px;
   `,
   large: css`
-    font-size: 25px;
-    width: 500px;
-    height: 500px;
+    font-size: 22px;
+    min-width: 300px;
   `,
 };
 
 const VARIANTS: ObjType = {
-  default: css`
-    --button-color: ${palette.text};
-    --button-bg-color: ${palette.primary}
-    --button-hover-bg-color: ${palette.gray0};
-  `,
-  filled: css`
-    --button-color: ${palette.textInvert};
-    --button-bg-color: ${palette.primaryDark};
-    --button-hover-bg-color: ${palette.gray0};
-
+  text: css`
+    color: ${palette.primaryDark};
     &:hover {
-      background: #339af0;
+      background-color: ${palette.backgroundElevated};
     }
     &:active {
-      background: #1c7ed6;
+      background-color: ${palette.backgroundElevated};
+    }
+  `,
+  filled: css`
+    color: ${palette.textInvert};
+    background-color: ${palette.primaryLight};
+    box-shadow: ${palette.boxShadow0};
+    &:hover {
+      background-color: ${palette.primary};
+      box-shadow: ${palette.boxShadow1};
+    }
+  `,
+  outlined: css`
+    color: ${palette.primaryDark};
+    border: ${palette.borderThickness} solid ${palette.primaryLight};
+    &:hover {
+      color: ${palette.primaryDark};
+      border: ${palette.borderThickness} solid ${palette.primaryDark};
+    }
+    &:active {
+      border: ${palette.borderThickness} solid ${palette.primaryDark};
     }
   `,
 };
@@ -51,27 +60,37 @@ export const StyledButton = styled.button.attrs(
     disabled: boolean;
   }) => ({ size, variant, disabled }),
 )`
-  display: inline-flex;
-  outline: none;
   border: none;
   border-radius: ${palette.borderRadius};
   font-weight: bold;
   cursor: pointer;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0.8rem;
 
-  max-width: 100%;
-  height: 2.25rem;
-  font-size: 1rem;
-
-  &:disabled {
-    cursor: default;
-    opacity: 0.5;
-    background: ${palette.gray1};
-  }
+  height: fit-content !important;
+  font-weight: 400;
+  word-break: break-word;
 
   ${({ variant }) => VARIANTS[variant]}
   ${({ size }) => SIZES[size]}
+
+  ${(props) =>
+    !props.disabled &&
+    css`
+      &:active {
+        transform: scale(0.99);
+      }
+    `}
+
+  &:disabled {
+    cursor: no-drop;
+    opacity: 0.5;
+    background: ${palette.gray5};
+    color: ${palette.gray1};
+  }
+
+  & + & {
+    margin-left: 20px;
+  }
 `;
 
 export const Wrapper = styled.div``;
