@@ -21,10 +21,4 @@ export const TagRemoveButton = styled.button`
   margin-left: 0.3rem;
   justify-content: center;
   align-items: center;
-
-  /* FIXME: Remove when icon font is added */
-  & > svg {
-    width: 0.75rem;
-    height: 0.75rem;
-  }
 `;
