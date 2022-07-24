@@ -64,10 +64,8 @@ export const StyledButton = styled.button.attrs(
   outline: none;
   border: none;
   border-radius: ${palette.borderRadius};
-  font-weight: bold;
   cursor: pointer;
   padding: 0.8rem;
-
   height: fit-content !important;
   font-weight: 400;
   word-break: break-word;
