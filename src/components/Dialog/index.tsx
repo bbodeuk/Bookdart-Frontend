@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import useDialog from '~/hooks/useDialog';
-import useDialogStore from '~/store/useDialogStore';
+import { useDialogStore } from '~/store';
 import {
   DialogBackdrop,
   DialogButton,

@@ -1,4 +1,4 @@
-import useDialogStore from '~/store/useDialogStore';
+import { useDialogStore } from '~/store';
 
 export default function useDialog() {
   const {
