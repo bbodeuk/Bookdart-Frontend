@@ -36,3 +36,7 @@ export interface GetBookmarksFromGroupResponse extends SuccessResponse {
     };
   };
 }
+
+export interface RefreshAuthTokenResponse extends SuccessResponse {
+  token: string;
+}
