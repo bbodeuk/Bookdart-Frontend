@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { useDrawerStore } from '~/store';
 import Drawer from './components/Drawer';
+import Bookmarks from './pages/Bookmarks';
+import Home from './pages/Home';
 
 export default function App() {
   const { open, setOpen } = useDrawerStore();
@@ -12,8 +14,8 @@ export default function App() {
         Open drawer
       </button>
       <Routes>
-        {/* FIXME: Update router with pages */}
-        <Route path="/" element={<p>Hello world!</p>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/bookmarks/:groupId" element={<Bookmarks />} />
       </Routes>
       <Drawer open={open} onClose={() => setOpen(false)} />
     </BrowserRouter>
