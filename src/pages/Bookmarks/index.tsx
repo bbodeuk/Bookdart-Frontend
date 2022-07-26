@@ -35,10 +35,6 @@ export default function Bookmarks() {
         return;
       }
 
-      if (page === 3) {
-        navigate('/bookmarks/tmp');
-      }
-
       setBookmarks((prev) => [...prev, ...response.data.bookmarks]);
       setLoading(false);
     },
