@@ -1,15 +1,15 @@
-import { MouseEvent } from 'react';
+import { MouseEvent, useCallback } from 'react';
 import { StyledButton } from './styles';
 import { ButtonProps } from './types';
 
 function Button({ size, variant, disabled, onAction, children }: ButtonProps) {
-  const handleClick = (e: MouseEvent) => {
+  const handleClick = useCallback((e: MouseEvent) => {
     e.preventDefault();
     if (disabled) {
       return;
     }
     onAction?.(e);
-  };
+  }, []);
 
   return (
     <StyledButton
