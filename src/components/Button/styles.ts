@@ -17,6 +17,40 @@ const SIZES: ObjType = {
   `,
 };
 
+const AddButton = css`
+  border-radius: 50%;
+  min-width: unset !important;
+  width: 50px !important;
+  height: 50px !important;
+  background-color: ${palette.gray6};
+`;
+
+export const AddIconWrapper = styled.div`
+  position: relative;
+`;
+
+export const HorizontalLine = styled.div`
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  width: 20px;
+  height: 2px;
+`;
+
+export const VerticalLine = styled.div`
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  width: 2px;
+  height: 20px;
+`;
+
 const VARIANTS: ObjType = {
   text: css`
     color: ${palette.primaryDark};
@@ -47,6 +81,14 @@ const VARIANTS: ObjType = {
       border: ${palette.borderThickness} solid ${palette.primaryDark};
     }
   `,
+  add: css`
+    ${AddButton}
+
+    ${HorizontalLine},
+    ${VerticalLine} {
+      display: inline;
+    }
+  `,
 };
 
 export const StyledButton = styled.button.attrs(
@@ -60,7 +102,6 @@ export const StyledButton = styled.button.attrs(
     disabled: boolean;
   }) => ({ size, variant, disabled }),
 )`
-  display: inline-flex;
   outline: none;
   border: none;
   border-radius: ${palette.borderRadius};

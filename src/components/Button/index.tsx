@@ -1,5 +1,10 @@
 import { MouseEvent, useCallback } from 'react';
-import { StyledButton } from './styles';
+import {
+  StyledButton,
+  HorizontalLine,
+  VerticalLine,
+  AddIconWrapper,
+} from './styles';
 import { ButtonProps } from './types';
 
 function Button({ size, variant, disabled, onAction, children }: ButtonProps) {
@@ -19,6 +24,10 @@ function Button({ size, variant, disabled, onAction, children }: ButtonProps) {
       onClick={(e: MouseEvent) => handleClick(e)}
     >
       {children}
+      <AddIconWrapper>
+        <HorizontalLine />
+        <VerticalLine />
+      </AddIconWrapper>
     </StyledButton>
   );
 }
