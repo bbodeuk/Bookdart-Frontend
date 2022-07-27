@@ -81,7 +81,9 @@ const group = [
       const perPage = 20;
       const page = +(req.url.searchParams.get('page') || '1');
       const bookmarks: Bookmark[] = [...new Array(perPage)].map((_, i) => ({
-        title: 'My awesome bookmark',
+        title: `My awesome bookmark from page ${req.url.searchParams.get(
+          'page',
+        )}`,
         description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id sollicitudin ligula. Quisque vitae nibh arcu. Aliquam tempor nisl nulla, sed tempus lectus sodales eu.',
         link: `https://example.com/${perPage * (page - 1) + i}`,
