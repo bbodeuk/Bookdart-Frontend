@@ -11,8 +11,10 @@ export const NavBar = styled.div`
   height: var(--gnb-height);
   padding: 0 10px;
   flex-direction: row;
-  background-color: ${palette.backgroundBase};
+  background-color: ${palette.backgroundTranslucent};
+  backdrop-filter: blur(8px) saturate(180%);
   box-shadow: ${palette.boxShadow1};
+  z-index: 5000;
 `;
 
 export const LogoLink = styled(Link)`
