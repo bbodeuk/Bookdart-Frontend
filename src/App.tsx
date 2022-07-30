@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { useDrawerStore } from '~/store';
 import Drawer from './components/Drawer';
+import GlobalNavigation from './components/GlobalNavigation';
 import Bookmarks from './pages/Bookmarks';
 import Home from './pages/Home';
 
@@ -10,6 +11,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <GlobalNavigation />
       <button type="button" onClick={() => setOpen(true)}>
         Open drawer
       </button>
