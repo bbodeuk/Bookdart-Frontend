@@ -1,4 +1,6 @@
 export interface DrawerStore {
-  open: boolean;
-  setOpen: (open: boolean) => void;
+  leftDrawerRevealed: boolean;
+  setLeftDrawerRevealed: (leftDrawerRevealed: boolean) => void;
+  rightDrawerRevealed: boolean;
+  setRightDrawerRevealed: (rightDrawerRevealed: boolean) => void;
 }

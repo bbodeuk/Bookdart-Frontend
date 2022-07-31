@@ -7,19 +7,32 @@ import Bookmarks from './pages/Bookmarks';
 import Home from './pages/Home';
 
 export default function App() {
-  const { open, setOpen } = useDrawerStore();
+  const {
+    leftDrawerRevealed,
+    setLeftDrawerRevealed,
+    rightDrawerRevealed,
+    setRightDrawerRevealed,
+  } = useDrawerStore();
 
   return (
     <BrowserRouter>
       <GlobalNavigation />
-      <button type="button" onClick={() => setOpen(true)}>
+      <button type="button" onClick={() => setLeftDrawerRevealed(true)}>
         Open drawer
       </button>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/bookmarks/:groupId" element={<Bookmarks />} />
       </Routes>
-      <Drawer open={open} onClose={() => setOpen(false)} />
+      <Drawer
+        revealed={leftDrawerRevealed}
+        onClose={() => setLeftDrawerRevealed(false)}
+      />
+      <Drawer
+        type="right"
+        revealed={rightDrawerRevealed}
+        onClose={() => setRightDrawerRevealed(false)}
+      />
     </BrowserRouter>
   );
 }

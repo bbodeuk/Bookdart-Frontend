@@ -5,21 +5,21 @@ import { DrawerProps } from './types';
 
 export default function Drawer({
   type = 'left',
-  open,
+  revealed,
   onClose,
   children,
 }: DrawerProps) {
   const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
-    if (open) {
+    if (revealed) {
       document.body.style.overflow = 'hidden';
       setToggle((prev) => !prev);
       return;
     }
 
     document.body.style.overflow = 'auto';
-  }, [open]);
+  }, [revealed]);
 
   const handleTransitionEnd = () => {
     if (!toggle) {
@@ -27,7 +27,7 @@ export default function Drawer({
     }
   };
 
-  return open ? (
+  return revealed ? (
     <Portal>
       <Wrapper>
         <Content type={type} toggle={toggle}>
