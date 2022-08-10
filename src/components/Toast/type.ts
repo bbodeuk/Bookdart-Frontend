@@ -1,3 +1,3 @@
 export interface ToastProps {
-  children?: string;
+  children: string;
 }
