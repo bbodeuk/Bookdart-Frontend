@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import useToastStore from '~/store/useToastStore';
 import { StyledToast, ToastBody, ToastCloseButton } from './styles';
 import { ToastProps } from './type';
@@ -7,10 +7,6 @@ import Icon from '../Icon';
 export default function Toast({ children }: ToastProps) {
   const { setOpen } = useToastStore();
   const [close, setClose] = useState<boolean>(false);
-
-  useEffect(() => {
-    console.log(`3 : ${children}`);
-  }, []);
 
   const handleClick = () => {
     if (!close) {
