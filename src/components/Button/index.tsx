@@ -18,9 +18,9 @@ function Button({ size, variant, disabled, onAction, children }: ButtonProps) {
 
   return (
     <StyledButton
-      size={size}
-      variant={variant}
-      disabled={disabled}
+      size={size || 'small'}
+      variant={variant || 'text'}
+      disabled={disabled || false}
       onClick={(e: MouseEvent) => handleClick(e)}
     >
       {children}
@@ -31,11 +31,5 @@ function Button({ size, variant, disabled, onAction, children }: ButtonProps) {
     </StyledButton>
   );
 }
-
-Button.defaultProps = {
-  size: 'small',
-  disabled: false,
-  variant: 'text',
-};
 
 export default Button;
