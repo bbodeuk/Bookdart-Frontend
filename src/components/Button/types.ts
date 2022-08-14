@@ -9,6 +9,6 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   onAction?: (e: React.MouseEvent) => void;
 }
 
-export type ObjType = {
+export type ButtonVariantType = {
   [key: string]: FlattenSimpleInterpolation;
 };

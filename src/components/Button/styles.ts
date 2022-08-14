@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 import palette from '../../theme/palette';
-import { ObjType } from './types';
+import { ButtonVariantType } from './types';
 
-const SIZES: ObjType = {
+const SIZES: ButtonVariantType = {
   small: css`
     font-size: 18px;
     min-width: 100px;
@@ -51,7 +51,7 @@ export const VerticalLine = styled.div`
   height: 20px;
 `;
 
-const VARIANTS: ObjType = {
+const VARIANTS: ButtonVariantType = {
   text: css`
     color: ${palette.primaryDark};
     &:hover {
