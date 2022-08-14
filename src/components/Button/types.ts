@@ -1,7 +1,7 @@
-import React, { ReactElement } from 'react';
+import React, { ButtonHTMLAttributes, ReactElement } from 'react';
 import { FlattenSimpleInterpolation } from 'styled-components';
 
-export interface ButtonProps {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: string;
   variant?: string;
   disabled?: boolean;
