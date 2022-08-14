@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import palette from '~/theme/palette';
 import { DrawerPosition } from './types';
 
-const WIDTH = 360;
+export const DRAWER_WIDTH = 360;
 
 export const Wrapper = styled.div`
   position: absolute;
@@ -16,24 +16,25 @@ export const Content = styled.div.attrs(
   }),
 )`
   position: fixed;
-  width: ${WIDTH}px;
-  height: 100vh;
+  width: ${DRAWER_WIDTH}px;
+  top: var(--gnb-height);
+  height: calc(100vh - var(--gnb-height));
   background-color: ${palette.backgroundBase};
 
-  z-index: 1200;
+  z-index: 6200;
 
   transform: translateX(
     ${({ toggle, type }) => {
       if (type === 'right') {
         if (toggle) {
-          return `calc(100vw - ${WIDTH}px)`;
+          return `calc(100vw - ${DRAWER_WIDTH}px)`;
         }
         return `100vw`;
       }
       if (toggle) {
         return `0px`;
       }
-      return `-${WIDTH}px`;
+      return `-${DRAWER_WIDTH}px`;
     }}
   );
   transition: transform 0.5s;
@@ -53,4 +54,9 @@ export const BackDrop = styled.div.attrs(
   background-color: rgba(0, 0, 0, 0.5);
   opacity: ${({ toggle }) => (toggle ? 1 : 0)};
   transition: opacity 0.5s;
+  @media screen and (min-width: 1200px) {
+    & {
+      display: none;
+    }
+  }
 `;

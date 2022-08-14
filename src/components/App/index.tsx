@@ -1,7 +1,9 @@
+import { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { useDrawerStore } from '~/store';
+import { useDrawerStore, useUserStore } from '~/store';
 import Drawer from '~/components/Drawer';
 import GlobalNavigation from '~/components/GlobalNavigation';
+import GroupContainer from '~/components/GroupContainer';
 import Bookmarks from '~/pages/Bookmarks';
 import Home from '~/pages/Home';
 import { Container, LeftDrawerButton, RightDrawerButton } from './styles';
@@ -13,6 +15,20 @@ export default function App() {
     rightDrawerRevealed,
     setRightDrawerRevealed,
   } = useDrawerStore();
+  const { group, fetchGroup } = useUserStore();
+
+  useEffect(() => {
+    if (group) {
+      return;
+    }
+
+    fetchGroup();
+
+    if (window.matchMedia('screen and (min-width: 1200px)')) {
+      setLeftDrawerRevealed(true);
+      setRightDrawerRevealed(true);
+    }
+  }, []);
 
   return (
     <Container>
@@ -46,7 +62,15 @@ export default function App() {
           type="right"
           revealed={rightDrawerRevealed}
           onClose={() => setRightDrawerRevealed(false)}
-        />
+        >
+          {group?.map(({ groupId, name, visibility }) => (
+            <GroupContainer
+              groupId={groupId}
+              name={name}
+              visibility={visibility}
+            />
+          ))}
+        </Drawer>
       </BrowserRouter>
     </Container>
   );

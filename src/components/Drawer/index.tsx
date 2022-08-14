@@ -10,15 +10,16 @@ export default function Drawer({
   children,
 }: DrawerProps) {
   const [toggle, setToggle] = useState(false);
+  const { body } = document;
 
   useEffect(() => {
     if (revealed) {
-      document.body.style.overflow = 'hidden';
+      body.style.overflow = 'hidden';
       setToggle((prev) => !prev);
       return;
     }
 
-    document.body.style.overflow = 'auto';
+    body.style.overflow = 'auto';
   }, [revealed]);
 
   const handleTransitionEnd = () => {

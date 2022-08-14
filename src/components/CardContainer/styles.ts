@@ -1,6 +1,20 @@
 import styled from 'styled-components';
+import { DRAWER_WIDTH } from '../Drawer/styles';
 
-const Container = styled.div`
+const CONTAINER_PADDING = 20;
+
+const Container = styled.div.attrs(
+  ({
+    leftDrawerRevealed,
+    rightDrawerRevealed,
+  }: {
+    leftDrawerRevealed: boolean;
+    rightDrawerRevealed: boolean;
+  }) => ({
+    leftDrawerRevealed,
+    rightDrawerRevealed,
+  }),
+)`
   /* FIXME: Remove magic numbers */
   & {
     display: flex;
@@ -20,6 +34,17 @@ const Container = styled.div`
     & {
       grid-template-columns: repeat(3, 1fr);
     }
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-left: ${({ leftDrawerRevealed }) =>
+      leftDrawerRevealed
+        ? `${DRAWER_WIDTH + CONTAINER_PADDING}px`
+        : `${CONTAINER_PADDING}px`};
+    padding-right: ${({ rightDrawerRevealed }) =>
+      rightDrawerRevealed
+        ? `${DRAWER_WIDTH + CONTAINER_PADDING}px`
+        : `${CONTAINER_PADDING}px`};
   }
 `;
 
