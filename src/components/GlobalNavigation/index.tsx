@@ -4,7 +4,17 @@ import { useToast } from '../Toast';
 
 export default function GlobalNavigation() {
   const toast = useToast();
-  const showToast = () => toast.send('hi!');
+  const showToast = () =>
+    toast.send(
+      `hiFEFOEIFEJWIOAJFEOIWJFOIEJOFW
+    hiFEFOEIFEJWIOAJFEOIWJFOIEJOFWefe
+    hiFEFOEIFEJWIOAJFEOIWJFOIEJOFWfea
+    hiFEFOEIFEJWIOAJFEOIWJFOIEJOFW
+    ! ${Math.random() * 2332}nd`,
+      {
+        type: 'info',
+      },
+    );
 
   return (
     <NavBar onClick={showToast}>

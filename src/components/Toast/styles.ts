@@ -1,5 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 import palette from '~/theme/palette';
+import { ToastStyledProps } from './type';
 
 const WIDTH = 310;
 const HEIGHT = 80;
@@ -22,15 +23,27 @@ const slideOut = keyframes`
   }
 `;
 
+const progress = keyframes`
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+`;
+
 const slideInAndOutAnimation = css`
-  animation: ${slideIn} 5s 2 cubic-bezier(0.42, 0, 0.58, 1);
+  animation: ${slideIn} 3s 2 alternate;
 `;
 const slideOutAnimation = css`
   animation: ${slideOut} 0.5s cubic-bezier(0.42, 0, 0.58, 1);
 `;
 
 export const StyledToast = styled.div.attrs(
-  ({ close }: { close: boolean }) => ({ close }),
+  ({ options, close }: ToastStyledProps) => ({
+    options,
+    close,
+  }),
 )`
   position: fixed;
   left: 50%;
@@ -43,9 +56,16 @@ export const StyledToast = styled.div.attrs(
   ${({ close }) => (close ? slideOutAnimation : slideInAndOutAnimation)};
 `;
 
+export const ToastProgressBar = styled.div`
+  height: 10px;
+  width: 100%;
+  background-color: ${palette.warning};
+  animation: ${progress} 3s ease-in-out;
+`;
+
 export const ToastBody = styled.div`
-  margin: 13.5px 0;
-  padding: 8px;
+  margin: 16px 0 13.5px 0;
+  padding: 12px;
 `;
 
 export const ToastCloseButton = styled.button`
