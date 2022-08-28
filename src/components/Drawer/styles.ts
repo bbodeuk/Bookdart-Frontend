@@ -4,10 +4,7 @@ import { DrawerPosition } from './types';
 
 export const DRAWER_WIDTH = 360;
 
-export const Wrapper = styled.div`
-  position: absolute;
-  inset: 0;
-`;
+export const Wrapper = styled.div``;
 
 export const Content = styled.div.attrs(
   ({ toggle, type }: { toggle: boolean; type: DrawerPosition }) => ({
@@ -38,6 +35,7 @@ export const Content = styled.div.attrs(
     }}
   );
   transition: transform 0.5s;
+  pointer-events: ${({ toggle }) => (toggle ? 'all' : 'none')};
 `;
 
 export const BackDrop = styled.div.attrs(
@@ -54,7 +52,8 @@ export const BackDrop = styled.div.attrs(
   background-color: rgba(0, 0, 0, 0.5);
   opacity: ${({ toggle }) => (toggle ? 1 : 0)};
   transition: opacity 0.5s;
-  @media screen and (min-width: 1200px) {
+  pointer-events: ${({ toggle }) => (toggle ? 'all' : 'none')};
+  @media screen and (min-width: 1680px) {
     & {
       display: none;
     }

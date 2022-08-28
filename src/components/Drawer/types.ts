@@ -6,4 +6,5 @@ export interface DrawerProps {
   children?: ReactElement | ReactElement[];
   revealed: boolean;
   onClose: () => void;
+  handler?: (state: boolean) => void;
 }

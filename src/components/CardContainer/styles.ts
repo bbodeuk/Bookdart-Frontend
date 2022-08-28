@@ -15,12 +15,10 @@ const Container = styled.div.attrs(
     rightDrawerRevealed,
   }),
 )`
-  /* FIXME: Remove magic numbers */
-  & {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 20px;
 
   @media screen and (min-width: 680px) {
     & {
@@ -36,7 +34,7 @@ const Container = styled.div.attrs(
     }
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1680px) {
     padding-left: ${({ leftDrawerRevealed }) =>
       leftDrawerRevealed
         ? `${DRAWER_WIDTH + CONTAINER_PADDING}px`

@@ -24,7 +24,7 @@ export default function App() {
 
     fetchGroup();
 
-    if (window.matchMedia('screen and (min-width: 1200px)')) {
+    if (window.matchMedia('screen and (min-width: 1680px)').matches) {
       setLeftDrawerRevealed(true);
       setRightDrawerRevealed(true);
     }
@@ -57,11 +57,13 @@ export default function App() {
         <Drawer
           revealed={leftDrawerRevealed}
           onClose={() => setLeftDrawerRevealed(false)}
+          handler={setLeftDrawerRevealed}
         />
         <Drawer
           type="right"
           revealed={rightDrawerRevealed}
           onClose={() => setRightDrawerRevealed(false)}
+          handler={setRightDrawerRevealed}
         >
           {group?.map(({ groupId, name, visibility }) => (
             <GroupContainer
