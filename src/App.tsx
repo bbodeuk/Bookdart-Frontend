@@ -5,6 +5,7 @@ import Drawer from './components/Drawer';
 import GlobalNavigation from './components/GlobalNavigation';
 import Bookmarks from './pages/Bookmarks';
 import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 
 export default function App() {
   const { open, setOpen } = useDrawerStore();
@@ -18,6 +19,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/bookmarks/:groupId" element={<Bookmarks />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Drawer open={open} onClose={() => setOpen(false)} />
     </BrowserRouter>
